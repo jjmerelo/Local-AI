@@ -64,7 +64,7 @@ ollama pull gemma:7b
 etc...
 ```
 
-## (Optional) Step 5 - Install Stable Diffusion (for image generation)
+## Step 5 (Optional) - Install Stable Diffusion (for image generation)
 1. Install Pre-requirements:
 ```
 sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev git
