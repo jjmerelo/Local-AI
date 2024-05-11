@@ -8,7 +8,7 @@
    
     ![image](https://github.com/jjmerelo/Local-AI/assets/169418683/e957510d-7afb-4225-b7ec-cfb598421c8f)
 
-## Things that Twinny can do
+## Some things that Twinny can do
 1. Refactor your code
 
    ![image](https://github.com/jjmerelo/Local-AI/assets/169418683/1b3b80b0-01ad-4b1e-830e-5ea98118f245)
