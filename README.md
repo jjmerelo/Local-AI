@@ -1,6 +1,11 @@
 
 # Local-AI
-This guide helps you quickly set up local AI on your personal computer. Follow the steps below according to your operating system: Windows users start with Step 1, while Linux users begin at Step 5.
+This guide helps you quickly set up local AI on your personal computer. Follow the steps below according to your operating system.
+
+Windows users begin with Step 1.
+
+Linux users start at Step 2.
+
 
 
 ## Step 1 - Install WSL
