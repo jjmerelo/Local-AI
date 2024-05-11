@@ -1,4 +1,5 @@
 # Setting up account for family members
+Check out the documentation for all the cool stuff you can do with WebUI: https://github.com/open-webui/open-webui/blob/main/README.md
 
 ## Creating a "role" Model
 First, lets create a model that your family member will be interacting with.
