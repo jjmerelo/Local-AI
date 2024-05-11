@@ -33,4 +33,6 @@ cd stablediff/
 ./webui.sh --listen --api
 ```
 
+![image](https://github.com/jjmerelo/Local-AI/assets/169418683/5f72d562-7a01-4c2e-8a3d-b87edda6b355)
 
+![image](https://github.com/jjmerelo/Local-AI/assets/169418683/bc0d3309-a861-4d4e-bd74-8a2e5b484cad)
