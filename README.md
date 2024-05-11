@@ -1,93 +1,102 @@
-# Local-AI
 
 # Local-AI
+This guide helps you quickly set up local AI on your personal computer. Follow the steps below according to your operating system: Windows users start with Step 1, while Linux users begin at Step 5.
 
-https://ollama.com/download/linux
-Download the Linux version: curl -fsSL https://ollama.com/install.sh | sh
 
-open CMD
-type wsl --install
-create username password
+## Step 1 - Install WSL
+To install Windows Subsystem for Linux (WSL):
+
+1. Open Command Prompt.
+```
+wsl --install
+```
+2. Follow the instructions to install WSL.
+3. Create a username and password when prompted.
+4. Update and upgrade your packages:
+```
 sudo apt update
 sudo apt upgrade
-curl -fsSL https://ollama.com/install.sh | sh
-// browse to http://localhost:11434/ to make sure it's running
+```
 
+## Step 2 - Install Ollama
+1. Download the Ollama installation script:
+```
+curl -fsSL https://ollama.com/install.sh | sh
+```
+Navigate to http://localhost:11434/ to confirm it's running.
+
+2. Pull and run the Llama2 model:
+```
 ollama pull llama2
 ollama run llama
-Once it's running you can ask it a question and interact (like chatgpt)
+```
 
-Run the commands here to install docker: https://docs.docker.com/engine/install/ubuntu/
-# Add Docker's official GPG key:
+## Step 3 - Install Docker
+1. Update your package index and install prerequisites:
+```
 sudo apt-get update
 sudo apt-get install ca-certificates curl
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
 sudo chmod a+r /etc/apt/keyrings/docker.asc
-
-# Add the repository to Apt sources:
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
-  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
-
-
+```
+2. Install Docker packages:
+```
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
 
+## Step 4 - Deploy WebUI container (your own site)
+1. Run Docker container for WebUI:
+```
 sudo docker run -d --network=host -v open-webui:/app/backend/data -e OLLAMA_BASE_URL=http://127.0.0.1:11434 --name open-webui --restart always ghcr.io/open-webui/open-webui:main
-verify with sudo docker ps
-open up http://localhost:8080/ and create an account
+```
+Verify the Docker container is running with ```sudo docker ps```.
 
-Select your model:
-![image](https://github.com/Toteroni/Local-AI/assets/13453157/37771ee3-d15b-4216-8b52-376da00350cb)
-download other models:
+Open http://localhost:8080/ and create an account.
+
+2. Pull additional models as needed:
+```
 ollama pull codegemma
-ollama pull mistral
-ollama pull llama3
-ollama pull gemma:7b
 ollama pull llava
-ollama pull dolphin-mistral
-ollama pull solar https://huggingface.co/upstage/SOLAR-10.7B-Instruct-v1.0
-etc..
+ollama pull gemma:7b
+etc...
+```
 
-
-
-What the UI does:
-Upload files
-create user accounts for family members
-  set restrictions for kids account (don't do homework, instead teach where to look)
-create custom models
-
-
-install pyget reqs:
-sudo apt install -y make build-essential libssl-dev zlib1g-dev \
-libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
-libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev git
-
-install pyenv:
+## Step 5 - Install Stable Diffusion (for image generation)
+1. Install Pre-requirements:
+```
+sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev git
+```
+2. Install pyenv:
+```
 curl https://pyenv.run | bash
-
-load pyenv automatically:
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-
-
-source.bashrc
-
-pyenv -h
-
+```
+3. Install Python 3.10 and make it global default:
+```
 pyenv install 3.10
-
 pyenv global 3.10
+```
+4. Install Stable Diffusion:
+```
 mkdir stablediff
 cd stablediff/
 wget -q https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui/master/webui.sh
-
 chmod +x webui.sh
-
 ./webui.sh --listen --api
+```
+You will now see a ![image](https://github.com/jjmerelo/Local-AI/assets/169418683/3719d4c7-b293-405e-b5a9-8bd745497b73) icon under your WebUI replies. Click on that button to generate an image.
 
-http://localhost:7860/
+Additionally, access the web UI at http://localhost:7860/ for custom optimazation and configutations.
+
+5. Note: if you close the terminal/cmd window..to reaccess Stable Diffusion you will need to rerun: 
+```
+cd stablediff/
+./webui.sh --listen --api
+```
+
 
