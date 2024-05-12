@@ -33,7 +33,7 @@ Navigate to http://localhost:11434/ to confirm it's running.
 2. Pull and run the Llama2 model:
 ```
 ollama pull llama2
-ollama run llama
+ollama run llama2
 ```
 
 ## Step 3 - Install Docker
