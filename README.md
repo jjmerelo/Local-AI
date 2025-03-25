@@ -1,6 +1,6 @@
 
 # Local-AI
-This guide helps you quickly set up local AI on your personal computer. Follow the steps below according to your operating system.
+This repo  helps you quickly set up local AI on your personal computer. You can do things like:
 1. Giving family members access
    
 ![image](https://github.com/user-attachments/assets/a4569c4f-721b-4bee-9cc3-5adc9f11b2c7)
@@ -17,6 +17,7 @@ This guide helps you quickly set up local AI on your personal computer. Follow t
  
 ![image](https://github.com/user-attachments/assets/cb79e4f0-6439-44a7-9db6-fdea51fb5746)
 
+Follow the steps below according to your operating system.
 
 Windows users begin with Step 1.
 
