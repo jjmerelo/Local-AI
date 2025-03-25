@@ -1,6 +1,22 @@
 
 # Local-AI
 This guide helps you quickly set up local AI on your personal computer. Follow the steps below according to your operating system.
+1. Giving family members access
+   
+![image](https://github.com/user-attachments/assets/a4569c4f-721b-4bee-9cc3-5adc9f11b2c7)
+
+2. Integrating Stable Diffusion for image generation
+
+![image](https://github.com/user-attachments/assets/9243358a-1b3d-48ea-94cf-ad5333b1eecc)
+
+3. Connecting your LocalAI with VSCode for your own CoPilot
+
+![image](https://github.com/user-attachments/assets/d2b671c0-590c-4496-8ea1-a42547072e73)
+
+4. Setting up a WebCrawler to extract information from webpages
+ 
+![image](https://github.com/user-attachments/assets/cb79e4f0-6439-44a7-9db6-fdea51fb5746)
+
 
 Windows users begin with Step 1.
 
